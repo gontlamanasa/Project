@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+    table{
+       color: blue;
+       background:cyan;
+       margin: solid;
+       font-size:20px;
+    }
+    h1{
+       background:magenta;
+       text-align:center;
+       border-style : solid;
+    }
+    </style>
+</head>
+<body>
+   <h1>Hyderabad Jobs Information....</h1>
+    {% if jobs_list %}
+    <table border="6">
+        <thead>
+          <th>date</th>
+          <th>company</th>
+          <th>title</th>
+          <th>eligibility</th>
+          <th>address</th>
+          <th>email</th>
+          <th>phonenumber</th>
+        </thead>
+        {% for job in jobs_list %}
+        <tr>
+            <td>{{job.date}}</td>
+            <td>{{job.company}}</td>
+            <td>{{job.title}}</td>
+            <td>{{job.eligibility}}</td>
+            <td>{{job.address}}</td>
+            <td>{{job.email}}</td>
+            <td>{{job.phonenumber}}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    {% else %}
+    <p id='specialp'>No Jobs In Hyd....</p>
+    {% endif %}
+</body>
+</html>
